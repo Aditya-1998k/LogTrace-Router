@@ -22,6 +22,8 @@ custom_log_handler_app/
 │   └── app.log           # Log file for File Log Handler
 ├── memory_log_buffer.py   # In-memory log buffer
 ├── database_setup.sql     # SQL for setting up logs table
-├── requirements.txt       # Dependencies
-└── config.py              # Configuration (e.g., database config)
+├── docker-compose.yml       # Docker Compose configuration
+├── Dockerfile               # Dockerfile for the Python app
+├── requirements.txt         # Python dependencies
+└── celery_worker.py         # Celery worker for asynchronous logging
 ```
