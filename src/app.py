@@ -1,14 +1,10 @@
-"""Hello Python"""
+from flask import Flask
 
-def divide_two_number(a,b):
-    try:
-        result = a/b
-        message = f"Division Successfull: {a} / {b} = {result}"
-        print(message)
-    except ZeroDivisionError as e:
-        error_message = f"Error: Division by zero - {e}"
-        print(message)
+app = Flask(__name__)
 
-if __name__ == "__main__":
-    divide_two_number(10, 5)
-    divide_two_number(10, 0)
+@app.route('/', methods=['GET'])
+def hello_world():
+    return "Hello, World!", 200
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)

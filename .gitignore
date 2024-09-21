@@ -6,10 +6,6 @@ __pycache__/
 venv/
 env/
 
-# Logs
-logs/
-*.log
-
 # .env file
 .env
 
