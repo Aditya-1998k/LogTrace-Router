@@ -29,3 +29,14 @@ custom_log_handler_app/
 ├── requirements.txt       # Python dependencies
 └── celery_worker.py       # Celery worker for asynchronous logging
 ```
+
+# sample ENVIRONMENT Variable
+```
+DB_NAME=your_db_name
+DB_USER=your_db_user
+DB_PASSWORD=your_db_password
+DB_HOST=db
+DB_PORT=5432
+REDIS_HOST=redis
+REDIS_PORT=6379
+```
