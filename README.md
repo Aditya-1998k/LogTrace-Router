@@ -11,7 +11,7 @@ Memory Log Handler : Logging into the Memory
 ### Project Structure
 ```
 custom_log_handler_app/
-├── app.py                # Main Flask application
+├── app.py                # Main application
 ├── handlers/
 │   ├── db_handler.py      # DB Log Handler (synchronous logging to the database)
 │   ├── async_handler.py   # Async Log Handler (asynchronous logging to the database)
