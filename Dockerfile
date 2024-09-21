@@ -1,11 +1,12 @@
 FROM python:3.10-slim
 
-WORKDIR /app/src
+WORKDIR /app
 
-COPY src/app.py .
+ENV PYTHONPATH="/app/src"
 
-RUN pip install flask
+COPY . .
 
-EXPOSE 5000
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
-CMD ["python", "app.py"]
+CMD ["python", "src/app.py"]
