@@ -1,0 +1,6 @@
+Flask==2.3.3           # Later integrate API in Application TODO
+psycopg2==2.9.6        # PostgreSQL driver for Python
+redis==4.5.5           # Redis client to connect and interact with Redis
+celery==5.3.0          # Celery for asynchronous task management
+gunicorn==21.2.0       # WSGI server load balancing for API request once FLask integrated
+python-dotenv==1.0.0   # For managing environment variables
