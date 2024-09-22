@@ -1,3 +1,6 @@
+# License
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/Aditya-1998k/Custom-Log-Handler/blob/main/LICENSE) file for details.
+
 # Custom-Log-Handler
 Logging in Python with custom handler:
 ```
