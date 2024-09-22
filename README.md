@@ -13,9 +13,9 @@ Memory Log Handler : Logging into the Memory
 
 ### Project Structure
 ```
-custom_log_handler_app/
-├── src/                  # New source folder
-│   ├── app.py            # Main application
+LogTrace-Router/
+├── src/                  
+│   ├── app.py            
 │   ├── handlers/         # Handlers for logging
 │   │   ├── db_handler.py
 │   │   ├── async_handler.py
