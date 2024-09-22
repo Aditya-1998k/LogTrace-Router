@@ -5,6 +5,7 @@ app = Flask(__name__)
 
 memory_handler = MemoryHandler()
 memory_handler.setLevel(logging.DEBUG)
+
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 memory_handler.setFormatter(formatter)
 
@@ -24,6 +25,11 @@ def hello_world():
 def get_buffer_log():
     logs = memory_handler.get_memory()
     return jsonify(logs)
+
+@app.route('/clear_log', methods=['GET'])
+def clear_buffer_log():
+    memory_handler.clear_memory()
+    return "OK"
 
 if __name__ == '__main__':
     logging.info('Starting server')

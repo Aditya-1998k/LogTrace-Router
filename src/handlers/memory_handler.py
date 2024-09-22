@@ -6,7 +6,12 @@ class MemoryHandler(logging.Handler):
         self.log_buffer = []
 
     def emit(self, record):
-        self.log_buffer.append(self.format(record))
+        log_entry = {
+            'level': record.levelname,
+            'message': record.getMessage(),
+            'timestamp': self.format(record)  # Ensure you use a proper formatter
+        }
+        self.log_buffer.append(log_entry)
 
     def get_memory(self):
         return self.log_buffer
