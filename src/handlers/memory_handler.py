@@ -3,13 +3,13 @@ import logging
 class MemoryHandler(logging.Handler):
     def __init__(self):
         super().__init__()
-        self.memory = []
+        self.log_buffer = []
 
     def emit(self, record):
-        self.memory.append(self.format(record))
+        self.log_buffer.append(self.format(record))
 
     def get_memory(self):
-        return self.memory
+        return self.log_buffer
 
     def clear_memory(self):
-        return self.memory.clear()
+        return self.log_buffer.clear()
