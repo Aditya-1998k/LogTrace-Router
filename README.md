@@ -1,7 +1,7 @@
 # License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/Aditya-1998k/Custom-Log-Handler/blob/main/LICENSE) file for details.
 
-# LogTrace Router
+## LogTrace Router
 Logging in Python with custom handler:
 ```
 DB Log Handler : Logging into database
@@ -33,7 +33,7 @@ LogTrace-Router/
 └── celery_worker.py       # Celery worker for asynchronous logging
 ```
 
-# sample ENVIRONMENT Variable
+### sample ENVIRONMENT Variable
 ```
 LOG_HANDLER=memory
 FILE_NAME='app/logs/app.log'
