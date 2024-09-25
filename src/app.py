@@ -1,34 +1,27 @@
 from flask import Flask, jsonify
 import logging
-from handlers.memory_handler import MemoryHandler
+from log_router import write_to_logger, get_logs, clear_logs
 app = Flask(__name__)
 
-memory_handler = MemoryHandler()
-memory_handler.setLevel(logging.DEBUG)
-
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-memory_handler.setFormatter(formatter)
-
-logging.getLogger().addHandler(memory_handler)
-logging.getLogger().setLevel(logging.DEBUG)
 
 @app.route('/hello', methods=['GET'])
 def hello_world():
     try:
-        logging.info('Hello, World! Executed')
+        write_to_logger('Hello, World! Executed', level='Warning')
+        a = 1/0
         return "Hello, World!", 200
     except Exception as e:
-        logging.error(f'Error: {e}')
+        write_to_logger(str(e), level='error')
         return "Error", 500
 
 @app.route('/log', methods=['GET'])
 def get_buffer_log():
-    logs = memory_handler.get_memory()
+    logs = get_logs()
     return jsonify(logs)
 
 @app.route('/clear_log', methods=['GET'])
 def clear_buffer_log():
-    memory_handler.clear_memory()
+    clear_logs()
     return "OK"
 
 if __name__ == '__main__':

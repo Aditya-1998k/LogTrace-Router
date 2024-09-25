@@ -9,7 +9,7 @@ class MemoryHandler(logging.Handler):
         log_entry = {
             'level': record.levelname,
             'message': record.getMessage(),
-            'timestamp': self.format(record)  # Ensure you use a proper formatter
+            'timestamp': self.format(record)
         }
         self.log_buffer.append(log_entry)
 
