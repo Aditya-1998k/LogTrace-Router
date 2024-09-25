@@ -35,11 +35,6 @@ LogTrace-Router/
 
 # sample ENVIRONMENT Variable
 ```
-DB_NAME=your_db_name
-DB_USER=your_db_user
-DB_PASSWORD=your_db_password
-DB_HOST=db
-DB_PORT=5432
-REDIS_HOST=redis
-REDIS_PORT=6379
+LOG_HANDLER=memory
+FILE_NAME='app/logs/app.log'
 ```
