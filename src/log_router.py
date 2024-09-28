@@ -1,37 +1,42 @@
 import logging
 import os
 from handlers.memory_handler import MemoryHandler
+from handlers.file_handler import CustomFileHandler
 
-handler  = os.getenv('LOG_HANDLER', 'memory')
+handler_type = os.getenv('LOG_HANDLER', 'memory')
 
-def log_handler(handler):
-    if handler == 'memory':
-        log_handler = MemoryHandler()
+def create_log_handler(handler_type):
+    if handler_type == 'memory':
+        return MemoryHandler()
     else:
-        log_handler = logging.StreamHandler()
-    return log_handler
+        filename = os.getenv('FILE_NAME', 'src/logs/app.log')
+        return CustomFileHandler(filename=filename)
 
-log_handler = log_handler(handler)
-log_handler.setLevel(logging.ERROR)
+log_handler = create_log_handler(handler_type)
+log_handler.setLevel(logging.DEBUG)
 
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 log_handler.setFormatter(formatter)
 
-logging.getLogger().addHandler(log_handler)
-logging.getLogger().setLevel(logging.DEBUG)
+logger = logging.getLogger()
+logger.addHandler(log_handler)
+logger.setLevel(logging.DEBUG)
 
 def write_to_logger(message, level):
     if level == 'info':
-        logging.info(message)
+        logger.info(message)
     elif level == 'error':
-        logging.error(message)
+        logger.error(message)
     elif level == 'warning':
-        logging.warning(message)
+        logger.warning(message)
     elif level == 'debug':
-        logging.debug(message)
+        logger.debug(message)
 
 def get_logs():
-    return log_handler.get_memory()
+    if hasattr(log_handler, 'get_memory'):
+        return log_handler.get_memory()
+    return []
 
 def clear_logs():
-    return log_handler.clear_memory()
+    if hasattr(log_handler, 'clear_memory'):
+        return log_handler.clear_memory()

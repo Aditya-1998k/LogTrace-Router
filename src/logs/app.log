@@ -1,0 +1,181 @@
+2024-09-28 16:36:09,220 - INFO - Starting server
+2024-09-28 16:36:09,222 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-09-28 16:36:09,222 - INFO -  * Running on http://172.21.0.2:5000/ (Press CTRL+C to quit)
+2024-09-28 16:36:15,596 - INFO - Starting server
+2024-09-28 16:36:15,598 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-09-28 16:36:15,598 - INFO -  * Running on http://172.21.0.2:5000/ (Press CTRL+C to quit)
+2024-09-28 16:40:02,784 - INFO - 192.168.65.1 - - [28/Sep/2024 16:40:02] "GET /log HTTP/1.1" 200 -
+2024-09-28 16:43:45,978 - INFO - Starting server
+2024-09-28 16:43:45,980 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-09-28 16:43:45,980 - INFO -  * Running on http://172.21.0.2:5000/ (Press CTRL+C to quit)
+2024-09-28 16:43:52,277 - INFO - Starting server
+2024-09-28 16:43:52,278 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-09-28 16:43:52,278 - INFO -  * Running on http://172.21.0.2:5000/ (Press CTRL+C to quit)
+2024-09-28 16:44:09,591 - INFO - 192.168.65.1 - - [28/Sep/2024 16:44:09] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-28 16:44:13,148 - INFO - 192.168.65.1 - - [28/Sep/2024 16:44:13] "GET /clear_log HTTP/1.1" 200 -
+2024-09-28 16:45:47,803 - INFO - Starting server
+2024-09-28 16:45:47,806 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-09-28 16:45:47,806 - INFO -  * Running on http://172.21.0.2:5000/ (Press CTRL+C to quit)
+2024-09-28 16:45:55,418 - INFO - Starting server
+2024-09-28 16:45:55,419 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-09-28 16:45:55,419 - INFO -  * Running on http://172.21.0.2:5000/ (Press CTRL+C to quit)
+2024-09-28 16:46:12,342 - ERROR - Exception on /clear_log [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/app/src/app.py", line 23, in clear_buffer_log
+    clear_logs()
+  File "/app/src/log_router.py", line 42, in clear_logs
+    return log_handler.clear_memory()
+AttributeError: 'CustomFileHandler' object has no attribute 'clear_memory'
+2024-09-28 16:46:12,355 - INFO - 192.168.65.1 - - [28/Sep/2024 16:46:12] "[35m[1mGET /clear_log HTTP/1.1[0m" 500 -
+2024-09-28 16:46:14,050 - INFO - 192.168.65.1 - - [28/Sep/2024 16:46:14] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-28 16:46:15,122 - INFO - Hello, World! Executed
+2024-09-28 16:46:15,124 - INFO - 192.168.65.1 - - [28/Sep/2024 16:46:15] "GET /hello HTTP/1.1" 200 -
+2024-09-28 16:46:20,064 - INFO - Hello, World! Executed
+2024-09-28 16:46:20,065 - INFO - 192.168.65.1 - - [28/Sep/2024 16:46:20] "GET /hello HTTP/1.1" 200 -
+2024-09-28 16:46:20,576 - INFO - 192.168.65.1 - - [28/Sep/2024 16:46:20] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-28 16:46:21,978 - INFO - 192.168.65.1 - - [28/Sep/2024 16:46:21] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-28 16:46:22,867 - ERROR - Exception on /log [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/app/src/app.py", line 18, in get_buffer_log
+    logs = get_logs()
+  File "/app/src/log_router.py", line 37, in get_logs
+    return log_handler.get_memory()
+AttributeError: 'CustomFileHandler' object has no attribute 'get_memory'
+2024-09-28 16:46:22,869 - INFO - 192.168.65.1 - - [28/Sep/2024 16:46:22] "[35m[1mGET /log HTTP/1.1[0m" 500 -
+2024-09-28 16:47:12,869 - ERROR - Exception on /log [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/app/src/app.py", line 18, in get_buffer_log
+    logs = get_logs()
+  File "/app/src/log_router.py", line 37, in get_logs
+    return log_handler.get_memory()
+AttributeError: 'CustomFileHandler' object has no attribute 'get_memory'
+2024-09-28 16:47:12,875 - INFO - 192.168.65.1 - - [28/Sep/2024 16:47:12] "[35m[1mGET /log HTTP/1.1[0m" 500 -
+2024-09-28 16:47:13,358 - INFO - 192.168.65.1 - - [28/Sep/2024 16:47:13] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-28 16:47:15,050 - ERROR - Exception on /clear_log [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/app/src/app.py", line 23, in clear_buffer_log
+    clear_logs()
+  File "/app/src/log_router.py", line 42, in clear_logs
+    return log_handler.clear_memory()
+AttributeError: 'CustomFileHandler' object has no attribute 'clear_memory'
+2024-09-28 16:47:15,052 - INFO - 192.168.65.1 - - [28/Sep/2024 16:47:15] "[35m[1mGET /clear_log HTTP/1.1[0m" 500 -
+2024-09-28 16:48:38,515 - INFO - Starting server
+2024-09-28 16:48:38,517 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-09-28 16:48:38,517 - INFO -  * Running on http://172.21.0.2:5000/ (Press CTRL+C to quit)
+2024-09-28 16:48:44,940 - INFO - Starting server
+2024-09-28 16:48:44,941 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-09-28 16:48:44,941 - INFO -  * Running on http://172.21.0.2:5000/ (Press CTRL+C to quit)
+2024-09-28 16:48:57,926 - ERROR - Exception on /clear_log [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/app/src/app.py", line 23, in clear_buffer_log
+    clear_logs()
+  File "/app/src/log_router.py", line 42, in clear_logs
+    return log_handler.clear_log()
+  File "/app/src/handlers/file_handler.py", line 16, in clear_log
+    with open(self.filename, 'w') as log_file:
+AttributeError: 'CustomFileHandler' object has no attribute 'filename'
+2024-09-28 16:48:57,937 - INFO - 192.168.65.1 - - [28/Sep/2024 16:48:57] "[35m[1mGET /clear_log HTTP/1.1[0m" 500 -
+2024-09-28 16:48:58,179 - INFO - 192.168.65.1 - - [28/Sep/2024 16:48:58] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-28 16:48:59,613 - INFO - 192.168.65.1 - - [28/Sep/2024 16:48:59] "[33mGET /hellop HTTP/1.1[0m" 404 -
+2024-09-28 16:49:03,066 - INFO - Hello, World! Executed
+2024-09-28 16:49:03,067 - INFO - 192.168.65.1 - - [28/Sep/2024 16:49:03] "GET /hello HTTP/1.1" 200 -
+2024-09-28 16:49:07,424 - INFO - Hello, World! Executed
+2024-09-28 16:49:07,425 - INFO - 192.168.65.1 - - [28/Sep/2024 16:49:07] "GET /hello HTTP/1.1" 200 -
+2024-09-28 16:49:08,283 - INFO - 192.168.65.1 - - [28/Sep/2024 16:49:08] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-28 16:49:09,417 - ERROR - Exception on /log [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/app/src/app.py", line 18, in get_buffer_log
+    logs = get_logs()
+  File "/app/src/log_router.py", line 37, in get_logs
+    return log_handler.get_log()
+  File "/app/src/handlers/file_handler.py", line 12, in get_log
+    with open(self.filename, 'r') as log_file:
+AttributeError: 'CustomFileHandler' object has no attribute 'filename'
+2024-09-28 16:49:09,419 - INFO - 192.168.65.1 - - [28/Sep/2024 16:49:09] "[35m[1mGET /log HTTP/1.1[0m" 500 -
+2024-09-28 16:51:10,869 - INFO - Starting server
+2024-09-28 16:51:10,870 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-09-28 16:51:10,870 - INFO -  * Running on http://172.21.0.2:5000/ (Press CTRL+C to quit)
+2024-09-28 16:51:20,731 - INFO - Starting server
+2024-09-28 16:51:20,733 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-09-28 16:51:20,733 - INFO -  * Running on http://172.21.0.2:5000/ (Press CTRL+C to quit)
+2024-09-28 16:51:31,112 - INFO - 192.168.65.1 - - [28/Sep/2024 16:51:31] "GET /log HTTP/1.1" 200 -
+2024-09-28 16:51:36,766 - INFO - 192.168.65.1 - - [28/Sep/2024 16:51:36] "GET /log HTTP/1.1" 200 -
+2024-09-28 16:51:37,322 - INFO - 192.168.65.1 - - [28/Sep/2024 16:51:37] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-28 16:51:39,021 - INFO - Hello, World! Executed
+2024-09-28 16:51:39,022 - INFO - 192.168.65.1 - - [28/Sep/2024 16:51:39] "GET /hello HTTP/1.1" 200 -
+2024-09-28 16:51:43,800 - INFO - Hello, World! Executed
+2024-09-28 16:51:43,801 - INFO - 192.168.65.1 - - [28/Sep/2024 16:51:43] "GET /hello HTTP/1.1" 200 -
+2024-09-28 16:51:44,865 - INFO - 192.168.65.1 - - [28/Sep/2024 16:51:44] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-28 16:51:46,105 - INFO - 192.168.65.1 - - [28/Sep/2024 16:51:46] "GET /log HTTP/1.1" 200 -
+2024-09-28 16:56:40,147 - INFO - Starting server
+2024-09-28 16:56:40,150 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-09-28 16:56:40,150 - INFO -  * Running on http://172.21.0.2:5000/ (Press CTRL+C to quit)
+2024-09-28 16:56:45,162 - INFO - Starting server
+2024-09-28 16:56:45,163 - WARNING -  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2024-09-28 16:56:45,163 - INFO -  * Running on http://172.21.0.2:5000/ (Press CTRL+C to quit)
+2024-09-28 16:56:59,640 - INFO - 192.168.65.1 - - [28/Sep/2024 16:56:59] "GET /log HTTP/1.1" 200 -
+2024-09-28 16:57:03,376 - INFO - 192.168.65.1 - - [28/Sep/2024 16:57:03] "GET /log HTTP/1.1" 200 -
+2024-09-28 16:57:07,447 - INFO - 192.168.65.1 - - [28/Sep/2024 16:57:07] "GET /log HTTP/1.1" 200 -
+2024-09-28 16:57:08,945 - INFO - 192.168.65.1 - - [28/Sep/2024 16:57:08] "[33mGET / HTTP/1.1[0m" 404 -
+2024-09-28 16:57:10,591 - INFO - Hello, World! Executed
+2024-09-28 16:57:10,591 - INFO - 192.168.65.1 - - [28/Sep/2024 16:57:10] "GET /hello HTTP/1.1" 200 -

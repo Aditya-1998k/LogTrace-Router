@@ -7,8 +7,7 @@ app = Flask(__name__)
 @app.route('/hello', methods=['GET'])
 def hello_world():
     try:
-        write_to_logger('Hello, World! Executed', level='Warning')
-        a = 1/0
+        write_to_logger('Hello, World! Executed', level='info')
         return "Hello, World!", 200
     except Exception as e:
         write_to_logger(str(e), level='error')
