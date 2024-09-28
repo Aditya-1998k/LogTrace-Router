@@ -38,3 +38,10 @@ LogTrace-Router/
 LOG_HANDLER=memory
 FILE_NAME='app/logs/app.log'
 ```
+
+### Accessing Web
+```
+http://127.0.0.1:50001/hello
+http://127.0.0.1:50001/log
+http://127.0.0.1:5000/clear_log
+```
