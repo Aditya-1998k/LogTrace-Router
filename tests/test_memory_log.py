@@ -22,15 +22,12 @@ def my_function():
 def test_logging(setup_logging, caplog):
     logger, memory_handler = setup_logging
 
-    # A built-in pytest fixture that captures log messages during the test.
     with caplog.at_level(logging.INFO):
         my_function()
 
-    # Assert that the log was captured
     assert len(caplog.records) == 1
     assert caplog.records[0].levelname == "INFO"
     assert caplog.records[0].message == "This is a log from my_function."
     
-    # check the memory handler
     assert len(memory_handler.get_memory()) == 1
     assert memory_handler.get_memory()[0]['message'] == "This is a log from my_function."

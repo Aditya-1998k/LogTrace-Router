@@ -5,7 +5,7 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 Logging in Python with custom handler:
 ```
 DB Log Handler : Logging into database
-Async Log Handler : Logging asynchronously to database
+Que Log Handler : Thread safe logging
 Console log Handler : Logging onto the console
 File Log Handler : Logging into the file
 Memory Log Handler : Logging into the Memory
@@ -20,7 +20,7 @@ c up -d (Running container in detach mode)
 c up (Running App in Attach Mode)
 c restart (Restart the container)
 c down (Stop and Delete the container)
-c stop (Stop the container
+c stop (Stop the container)
 ```
 
 ### Project Structure
@@ -28,21 +28,18 @@ c stop (Stop the container
 LogTrace-Router/
 ├── src/                  
 │   ├── app.py            
-│   ├── handlers/         # Handlers for logging
+│   ├── handlers/          # Handlers for logging
 │   │   ├── db_handler.py
-│   │   ├── async_handler.py
+│   │   ├── queue_handler.py
 │   │   ├── console_handler.py
 │   │   ├── file_handler.py
 │   │   └── memory_handler.py
-│   ├── memory_log_buffer.py  # In-memory log buffer
-│   ├── config.py         # Configuration file
-├── logs/                 # Directory for log files
-│   └── app.log           # Log file for File Log Handler
+├── logs/                  # Directory for log files
+│   └── app.log            # Log file for File Log Handler
 ├── database_setup.sql     # SQL for setting up logs table
 ├── docker-compose.yml     # Docker Compose configuration
 ├── Dockerfile             # Dockerfile for the Python app
 ├── requirements.txt       # Python dependencies
-└── celery_worker.py       # Celery worker for asynchronous logging
 ```
 
 ### sample ENVIRONMENT Variable

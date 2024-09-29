@@ -3,6 +3,7 @@ import os
 from handlers.memory_handler import MemoryHandler
 from handlers.file_handler import CustomFileHandler
 from handlers.console_handler import CustomConsoleHandler
+from handlers.queue_handler import QueueLogHandler
 
 handler_type = os.getenv('LOG_HANDLER', 'memory')
 
@@ -12,8 +13,12 @@ def create_log_handler(handler_type):
     elif handler_type == 'file':
         filename = os.getenv('FILE_NAME', 'src/logs/app.log')
         return CustomFileHandler(filename=filename)
-    else:
+    elif handler_type == 'console':
         return CustomConsoleHandler()
+    elif handler_type == 'queue':
+        return QueueLogHandler().get_handler()
+    else:
+        raise ValueError('Invalid handler type')
 
 log_handler = create_log_handler(handler_type)
 log_handler.setLevel(logging.DEBUG)
