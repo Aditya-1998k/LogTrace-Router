@@ -12,8 +12,9 @@ Memory Log Handler : Logging into the Memory
 ```
 
 ### Shortcut Command to start the project
-Refer file: Initialize.sh & utils.sh file
+Refer file: initialize.sh & utils.sh file
 ```
+source initialize.sh
 c up -d (Running container in detach mode)
 c up (Running App in Attach Mode)
 c restart
