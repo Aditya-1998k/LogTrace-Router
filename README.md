@@ -11,6 +11,16 @@ File Log Handler : Logging into the file
 Memory Log Handler : Logging into the Memory
 ```
 
+### Shortcut Command to start the project
+Refer file: Initialize.sh & utils.sh file
+```
+c up -d (Running container in detach mode)
+c up (Running App in Attach Mode)
+c restart
+c down
+c stop
+```
+
 ### Project Structure
 ```
 LogTrace-Router/
