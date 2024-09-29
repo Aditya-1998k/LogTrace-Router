@@ -19,6 +19,8 @@ c up (Running App in Attach Mode)
 c restart
 c down
 c stop
+c ps
+c ps -a
 ```
 
 ### Project Structure
