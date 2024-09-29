@@ -45,3 +45,9 @@ http://127.0.0.1:50001/hello
 http://127.0.0.1:50001/log
 http://127.0.0.1:5000/clear_log
 ```
+
+### Custom Memory Handler
+<img width="927" alt="Screenshot 2024-09-22 at 10 23 36 PM" src="https://github.com/user-attachments/assets/0f859bb1-ed8a-4aaf-828a-2c41bf08d217">
+
+### Custom Console Handler
+<img width="927" alt="Screenshot 2024-09-29 at 6 56 36 AM" src="https://github.com/user-attachments/assets/ac98e886-7430-43a2-bfeb-bf0d7791232c">
