@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM cymagix/python-for-pyodbc-sqlserver:latest
 
 WORKDIR /app
 

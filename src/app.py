@@ -1,6 +1,7 @@
-from flask import Flask, jsonify
 import logging
+from flask import Flask, jsonify
 from log_router import write_to_logger, get_logs, clear_logs
+
 app = Flask(__name__)
 
 
@@ -24,5 +25,4 @@ def clear_buffer_log():
     return "OK"
 
 if __name__ == '__main__':
-    logging.info('Starting server')
     app.run(host='0.0.0.0', port=5000)

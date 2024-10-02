@@ -12,3 +12,4 @@ env/
 # Other IDE files
 .idea/
 .vscode/
+mssql-data/

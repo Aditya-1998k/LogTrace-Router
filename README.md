@@ -36,7 +36,6 @@ LogTrace-Router/
 │   │   └── memory_handler.py
 ├── logs/                  # Directory for log files
 │   └── app.log            # Log file for File Log Handler
-├── database_setup.sql     # SQL for setting up logs table
 ├── docker-compose.yml     # Docker Compose configuration
 ├── Dockerfile             # Dockerfile for the Python app
 ├── requirements.txt       # Python dependencies
@@ -44,8 +43,14 @@ LogTrace-Router/
 
 ### sample ENVIRONMENT Variable
 ```
-LOG_HANDLER=memory
-FILE_NAME='app/logs/app.log'
+LOG_HANDLER='db'
+FILE_NAME='src/logs/app.log'
+host="mssql"
+port=1433
+db="master"
+user="SA"
+pwd="Password@123"
+driver="ODBC Driver 17 for SQL Server"
 ```
 
 ### Accessing Web
