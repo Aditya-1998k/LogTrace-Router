@@ -2,10 +2,6 @@ CODE_CHANGE = true //we can define groovy script to check code change
 
 pipeline {
     agent any
-    tools {
-        maven
-        gradle
-    }
     environment {
         NEW_VERSION = '1.3.0'  //available for all stages
         // SERVER_CREDENTIAL = credentails('server-credential')
